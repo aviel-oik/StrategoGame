@@ -17,24 +17,24 @@ function creatSoldier(rank, owner) {
 
 function createSoldierList(owner) {
     let SoldiersLst = []
-    for (let i = 1; i <= 11; i++) {
-        if (i === 1 || i === 9 || i === 10 || i === 11)
-            SoldiersLst.push(creatSoldier(i, owner))
-        if (i === 8)
-            for (let i = 0; i < 2; i++)
-                SoldiersLst.push(creatSoldier(i, owner))
-        if (i === 7)
+    for (let rank = 1; rank <= 11; rank++) {
+        if (rank === 1 || rank === 9 || rank === 10 || rank === 11)
+            SoldiersLst.push(creatSoldier(rank, owner))
+        if (rank === 8)
             for (let i = 0; i < 3; i++)
-                SoldiersLst.push(creatSoldier(i, owner))
-        if (i === 4 || i === 5 || i === 6)
+                SoldiersLst.push(creatSoldier(rank, owner))
+        if (rank === 7)
             for (let i = 0; i < 4; i++)
-                SoldiersLst.push(creatSoldier(i, owner))
-        if (i === 3)
+                SoldiersLst.push(creatSoldier(rank, owner))
+        if (rank === 4 || rank === 5 || rank === 6)
             for (let i = 0; i < 5; i++)
-                SoldiersLst.push(creatSoldier(i, owner))
-        if (i === 2)
+                SoldiersLst.push(creatSoldier(rank, owner))
+        if (rank === 3)
+            for (let i = 0; i < 6; i++)
+                SoldiersLst.push(creatSoldier(rank, owner))
+        if (rank === 2)
             for (let i = 0; i < 8; i++)
-                SoldiersLst.push(creatSoldier(i, owner))
+                SoldiersLst.push(creatSoldier(rank, owner))
     }
     return SoldiersLst
 }
@@ -43,10 +43,10 @@ export function placeSoldier() {
     let board = createBoard(10)
     let computerSoldiersLst = createSoldierList("computer")
     let playerSoldiersLst = createSoldierList("player")
-    for (let i = 0; i < 3; i++) { // need to calculate 
+    for (let i = 0; i < 4; i++) { // need to calculate 
         for (let j = 0; j < board.length; j++) {
-            const computerSoldier = computerSoldiersLst.splice(Math.random() * computerSoldiersLst.length)
-            const playerSoldier = playerSoldiersLst.splice(Math.random() * playerSoldiersLst.length)
+            const computerSoldier = computerSoldiersLst.splice(Math.floor(Math.random() * computerSoldiersLst.length), 1)[0]
+            const playerSoldier = playerSoldiersLst.splice(Math.floor(Math.random() * playerSoldiersLst.length), 1)[0]
             board[i + 6][j] = computerSoldier
             board[i][j] = playerSoldier
         }
