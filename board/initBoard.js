@@ -7,8 +7,6 @@ export function createBoard(boardSize) {
     return board
 }
 
-console.log(createBoard(10))
-
 function creatSoldier(rank, owner) {
     let soldier = {}
     return soldier = {
