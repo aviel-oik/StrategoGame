@@ -1,0 +1,24 @@
+{
+  "name": "stategogame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aviel-oik/StrategoGame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/aviel-oik/StrategoGame/issues"
+  },
+  "homepage": "https://github.com/aviel-oik/StrategoGame#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
