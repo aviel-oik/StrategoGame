@@ -1,40 +1,15 @@
 import { placeSoldier } from "./initBoard.js";
 
-// export default function printBoard(board) {
-//     let columnIndex = `|`
-
-//     for (let i = 0; i < board.length; i++) {
-//         columnIndex += ` ${i} |`
-//     }
-
-//     console.log(columnIndex);
-
-//     for (const row of board) {
-//         let rowToPrint = `|`
-
-//         for (let i = 0; i < board.length; i++) {
-
-//             if (row[i] === 0) {
-//                 rowToPrint += ` ${row[i]} |`
-//             } else if (row[i].owner === 'computer') {
-//                 rowToPrint += ' X |'
-//             } else {
-//                 rowToPrint += ` ${row[i].rank} |`
-//             }
-//         }
-//         console.log(rowToPrint);
-//     }
-// }
-
 export default function printBoard(board) {
     // --- Print column indices ---
+
     let columnIndex = "     ||";   // offset for row numbers
 
     for (let i = 0; i < board.length; i++) {
         columnIndex += ` ${i.toString().padStart(2, " ")} |`;
     }
 
-    console.log(columnIndex);
+    console.log("\n" + columnIndex);
     console.log("=".repeat(columnIndex.length));
 
     // --- Print each row ---
@@ -48,7 +23,10 @@ export default function printBoard(board) {
             if (cell === 0) {
                 rowToPrint += "    |";
             } else if (cell.owner === "computer") {
-                rowToPrint += " X  |";
+                if (cell.rank === 11)
+                    rowToPrint += " F  |";
+                else
+                    rowToPrint += " X  |";
             } else {
                 rowToPrint += ` ${cell.rank.toString().padStart(2, " ")} |`;
             }
@@ -57,4 +35,5 @@ export default function printBoard(board) {
         console.log(rowToPrint);
         console.log("-".repeat(columnIndex.length));
     }
+    console.log("\n");
 }

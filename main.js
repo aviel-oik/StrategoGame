@@ -7,6 +7,5 @@ const board = placeSoldier()
 while (!endGame.end) {
     printBoard(board)
     playerRound(board, endGame)
-    // printBoard(board)
     computerRound(board, endGame)
 }

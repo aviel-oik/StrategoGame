@@ -4,16 +4,16 @@ import readline from "readline-sync"
 
 
 export function playerRound(board, endGame) {
-    console.log("Youn turn to play")
-    const soldierToMove = readline.question("please choose a soldier to move (x,y) : ")
-    const x = parseInt(soldierToMove[1])
-    const y = parseInt(soldierToMove[3])
+    console.log("=== YOUR TURN ===")
+    const soldierToMove = readline.question("please choose a soldier to move (format x/y) : ")
+    const x = parseInt(soldierToMove[0])
+    const y = parseInt(soldierToMove[2])
     endGame = playerMovement(x, y, board, endGame)
     return endGame
 }
 
 export function computerRound(board, endGame) {
-    console.log("Computer's turn to play")
+    console.log("\n=== COMPUTER'S TURN ===")
     let x = Math.floor(Math.random() * board.length)
     let y = Math.floor(Math.random() * board.length)
     while (board[x][y] == 0 || board[x][y].owner !== "computer" || moveSoldierPossibilities(x, y, board).length === 0 || board[x][y].rank === 11) {
@@ -34,7 +34,6 @@ function playerMovement(x, y, board, endGame) {
         console.log("this is not your soldier, please choose another one")
         return false
     }
-    console.log(board[x][y])
     const possibilites = moveSoldierPossibilities(x, y, board)
     console.log("you can move your soldier to the following directions: " + possibilites)
     let direction = readline.question("please choose a direction to move your soldier: ")
@@ -60,7 +59,6 @@ function moveSoldierPossibilities(x, y, board) {
 
 function moveSoldier(x, y, direction, board, endGame) {
     let soldier = board[x][y]
-    console.log(board[x][y])
     if (direction === "left")
         if (board[x][y - 1] == 0)
             board[x][y - 1] = soldier
@@ -88,7 +86,7 @@ function fight(x, y, x2, y2, board, endGame) {
     let attacker = board[x][y]
     let defender = board[x2][y2]
     if (defender.rank === 11) {
-        console.log("Winn the game! you captured the flag")
+        console.log("YOU CAPTURED THE FLAG!")
         Victory(endGame)
         return
     }
