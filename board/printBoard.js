@@ -1,9 +1,7 @@
 import { placeSoldier } from "./initBoard.js";
 
 export default function printBoard(board) {
-    // --- Print column indices ---
-
-    let columnIndex = "     ||";   // offset for row numbers
+    let columnIndex = "     ||"; 
 
     for (let i = 0; i < board.length; i++) {
         columnIndex += ` ${i.toString().padStart(2, " ")} |`;
@@ -12,10 +10,9 @@ export default function printBoard(board) {
     console.log("\n" + columnIndex);
     console.log("=".repeat(columnIndex.length));
 
-    // --- Print each row ---
     for (let r = 0; r < board.length; r++) {
         let row = board[r];
-        let rowToPrint = `${r.toString().padStart(2, " ")}   ||`; // row index
+        let rowToPrint = `${r.toString().padStart(2, " ")}   ||`;
 
         for (let i = 0; i < board.length; i++) {
             let cell = row[i];
