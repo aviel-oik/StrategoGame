@@ -20,8 +20,8 @@ export function computerRound(board, endGame) {
         x = Math.floor(Math.random() * board.length)
         y = Math.floor(Math.random() * board.length)
     }
-    const possibilites = moveSoldierPossibilities(x, y, board)
-    const direction = possibilites[Math.floor(Math.random() * possibilites.length)]
+    const possibilities = moveSoldierPossibilities(x, y, board)
+    const direction = possibilities[Math.floor(Math.random() * possibilities.length)]
     moveSoldier(x, y, direction, board, endGame)
 }
 
@@ -34,10 +34,10 @@ function playerMovement(x, y, board, endGame) {
         console.log("this is not your soldier, please choose another one")
         return false
     }
-    const possibilites = moveSoldierPossibilities(x, y, board)
-    console.log("you can move your soldier to the following directions: " + possibilites)
+    const possibilities = moveSoldierPossibilities(x, y, board)
+    console.log("you can move your soldier to the following directions: " + possibilities)
     let direction = readline.question("please choose a direction to move your soldier: ")
-    if (!possibilites.includes(direction)) {
+    if (!possibilities.includes(direction)) {
         console.log("invalid direction, please choose another one")
         return false
     }
@@ -45,16 +45,16 @@ function playerMovement(x, y, board, endGame) {
 }
 
 function moveSoldierPossibilities(x, y, board) {
-    const possibilites = []
+    const possibilities = []
     if (y > 0 && (board[x][y - 1].owner !== board[x][y].owner || board[x][y - 1] == 0))
-        possibilites.push("left")
+        possibilities.push("left")
     if (y < board.length - 1 && (board[x][y + 1].owner !== board[x][y].owner || board[x][y + 1] == 0))
-        possibilites.push("right")
+        possibilities.push("right")
     if (x > 0 && (board[x - 1][y].owner !== board[x][y].owner || board[x - 1][y] == 0))
-        possibilites.push("backward")
+        possibilities.push("backward")
     if (x < board.length - 1 && (board[x + 1][y].owner !== board[x][y].owner || board[x + 1][y] == 0))
-        possibilites.push("forward")
-    return possibilites
+        possibilities.push("forward")
+    return possibilities
 }
 
 function moveSoldier(x, y, direction, board, endGame) {
