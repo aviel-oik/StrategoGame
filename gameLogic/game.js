@@ -34,6 +34,10 @@ function playerMovement(x, y, board, endGame) {
         console.log("this is not your soldier, please choose another one")
         return false
     }
+    if (board[x][y].rank === 11) {
+        console.log("the flag can't be moved");
+        return false
+    }
     const possibilities = moveSoldierPossibilities(x, y, board)
     console.log("you can move your soldier to the following directions: " + possibilities)
     let direction = readline.question("please choose a direction to move your soldier: ")
