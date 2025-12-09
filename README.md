@@ -44,8 +44,10 @@ A command-line implementation of the classic board game Stratego, designed for p
 
 ## Roadmap
 1. Implement two player functionality.
-2. Add a graphical user interface (GUI).
-3. Introduce advanced AI for computer opponents.  
+2. boomb functionality implementation.
+3. possibility to place soldiers manually by the player.
+4. Add a graphical user interface (GUI).
+5. Introduce advanced AI for computer opponents.  
 
 
 ## Branch Names and Commit Style
