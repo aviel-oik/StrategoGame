@@ -7,7 +7,7 @@ export function createBoard(boardSize) {
     return board
 }
 
-function creatSoldier(rank, owner) {
+function createSoldier(rank, owner) {
     let soldier = {}
     return soldier = {
         owner: owner,
@@ -19,22 +19,22 @@ function createSoldierList(owner) {
     let SoldiersLst = []
     for (let rank = 1; rank <= 11; rank++) {
         if (rank === 1 || rank === 9 || rank === 10 || rank === 11)
-            SoldiersLst.push(creatSoldier(rank, owner))
+            SoldiersLst.push(createSoldier(rank, owner))
         if (rank === 8)
             for (let i = 0; i < 3; i++)
-                SoldiersLst.push(creatSoldier(rank, owner))
+                SoldiersLst.push(createSoldier(rank, owner))
         if (rank === 7)
             for (let i = 0; i < 4; i++)
-                SoldiersLst.push(creatSoldier(rank, owner))
+                SoldiersLst.push(createSoldier(rank, owner))
         if (rank === 4 || rank === 5 || rank === 6)
             for (let i = 0; i < 5; i++)
-                SoldiersLst.push(creatSoldier(rank, owner))
+                SoldiersLst.push(createSoldier(rank, owner))
         if (rank === 3)
             for (let i = 0; i < 6; i++)
-                SoldiersLst.push(creatSoldier(rank, owner))
+                SoldiersLst.push(createSoldier(rank, owner))
         if (rank === 2)
             for (let i = 0; i < 8; i++)
-                SoldiersLst.push(creatSoldier(rank, owner))
+                SoldiersLst.push(createSoldier(rank, owner))
     }
     return SoldiersLst
 }
