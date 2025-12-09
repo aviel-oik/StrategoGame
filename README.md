@@ -3,8 +3,9 @@ A command-line implementation of the classic board game Stratego, designed for p
 
 
 ## Installation and Running
+
 1. Clone the repository:
-   git clone
+    git clone [MIT](https://github.com/aviel-oik/StrategoGame.git)
 
 3. Install dependencies:
     npm install
