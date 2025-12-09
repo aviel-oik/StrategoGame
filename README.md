@@ -24,7 +24,7 @@ A command-line implementation of the classic board game Stratego, designed for p
 - Start the game and follow the prompts to move your soldiers on the board.
 - Input format for moving a soldier: `x/y` (e.g., `2/3`).
 - Example output after capturing the flag:
-```YOU CAPTURED THE FLAG!```  
+`YOU CAPTURED THE FLAG!` 
 
 
 ## Folder Structure 
